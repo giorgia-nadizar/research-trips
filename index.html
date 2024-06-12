@@ -62,6 +62,7 @@
                     photo: "photos/".concat(columns[0].replace(/\s/g, ""), ".jpg")
                 };
                 cities.push(city);
+                console.log(city);
             });
 
             // Center map on the coordinates of Trieste
@@ -83,6 +84,7 @@
                 marker.bindPopup("<b>" + city.title + "</b><br><img src='" + city.photo + "' width='200'>", {
                     keepInView: true // Ensure popup stays in view
                 });
+                console.log(city);
             });
 
         })
