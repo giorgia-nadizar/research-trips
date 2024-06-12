@@ -79,7 +79,7 @@
                 popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
             	});
             
-                var marker = L.marker(city.coords, { icon: customIcon }).addTo(map);
+                var marker = L.marker(city.coords, { icon: currentIcon }).addTo(map);
                 marker.bindPopup("<b>" + city.title + "</b><br><img src='" + city.photo + "' width='200'>", {
                     keepInView: true // Ensure popup stays in view
                 });
