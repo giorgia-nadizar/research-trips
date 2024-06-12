@@ -69,16 +69,16 @@
             y_center = 13.772674982725404;
             map.setView([x_center, y_center], 6);
 
-            // Define custom icon
-            var customIcon = L.icon({
-                iconUrl: "marker.png",
+            // Draw markers and trajectories
+            cities.forEach(city => {
+            	// Custom icon
+            	var currentIcon = L.icon({
+                iconUrl: city.type + ".png",
                 iconSize: [32, 32], // size of the icon
                 iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
                 popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
-            });
-
-            // Draw markers and trajectories
-            cities.forEach(city => {
+            	});
+            
                 var marker = L.marker(city.coords, { icon: customIcon }).addTo(map);
                 marker.bindPopup("<b>" + city.title + "</b><br><img src='" + city.photo + "' width='200'>", {
                     keepInView: true // Ensure popup stays in view
